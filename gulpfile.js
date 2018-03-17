@@ -7,7 +7,7 @@ var nunjucksRender = require('gulp-nunjucks-render');
 
 gulp.task('nunjucks', function() {
     // Gets .html and .nunjucks files in pages
-    return gulp.src('app/pages/**/*.+(html|nunjucks)')
+    return gulp.src('app/pages/**/*.+(html|njk)')
     // Adding data to Nunjucks
     .pipe(data(function() {
         return require('./app/data.json')

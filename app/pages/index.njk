@@ -1,9 +1,7 @@
-{% extends "layout.nunjucks" %}
+{% extends "layout.njk" %}
 
 {% block content %}
 <h1>This is the index page</h1>
-{% import 'macros/nav-macro.nunjucks' as nav %}
-{{nav.active('home')}}
 
 <div class="gallery">
   <!-- Loops through "images" array -->

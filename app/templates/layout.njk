@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header class="page-header">Header</header>
-  <article class="content">Article</article>
-  <nav class="navigation">Navigation</nav>
-  <footer class="page-footer">Footer</footer>
-  {% block content %} {% endblock %}
+  {% import 'partials/header.nunjucks' as header %}
+  
+  <article class="content">
+    {% block content %} {% endblock %}
+  </article>
 
   <script src="js/main.js"></script>
 </body>
