@@ -2,20 +2,120 @@
 
 const gulp = require('gulp');
 
-var data = require('gulp-data');
-var nunjucksRender = require('gulp-nunjucks-render');
+// Load all required plugins (listed in package.json)
+const plugins = require('gulp-load-plugins')({
+  pattern: '*'
+});
 
-gulp.task('njk', function() {
+console.log(plugins); // Logs loaded plugins in terminal
+
+const reload = plugins.browserSync.reload;
+
+// Loads BrowserSync
+gulp.task('browser-sync', () => {
+    plugins.browserSync.init({
+        server: {
+            baseDir: "./app"
+        }
+    });
+});
+
+// Renders Nunjucks
+gulp.task('njk', () =>
     // Gets .html and .njk files in pages
-    return gulp.src('app/pages/**/*.+(html|njk)')
+    gulp.src('./app/pages/**/*.+(html|njk)')
     // Adding data to Nunjucks
-    .pipe(data(function() {
+    .pipe(plugins.data(() => {
         return require('./app/data.json')
       }))
     // Renders template with nunjucks
-    .pipe(nunjucksRender({
-        path: ['app/templates']
+    .pipe(plugins.nunjucksRender({
+        path: ['./app/templates']
         }))
     // output files in app folder
-    .pipe(gulp.dest('app'))
+    .pipe(gulp.dest('./app'))
+);
+
+// Compile Sass
+gulp.task('styles', () =>
+  gulp
+    .src('./assets/scss/index.scss')
+    .pipe(
+      plugins.sass({
+        onError: function(err) {
+          return notify().write(err);
+        }
+      })
+    )
+    .pipe(gulp.dest('./assets/css/'))
+);
+
+// Linters
+gulp.task('lint-styles', () => 
+  gulp
+    .src(['./assets/sass/**/*.scss', '!assets/sass/vendor/**/*.scss'])
+    .pipe(plugins.sassLint())
+    .pipe(plugins.sassLint.format())
+    .pipe(plugins.sassLint.failOnError())
+);
+
+gulp.task('lint-scripts', () =>
+  gulp
+    .src(['./assets/js/**/*.js', '!assets/js/vendor/**/*.js'])
+    .pipe(plugins.jshint({ esversion: 6 }))
+    .pipe(plugins.jshint.reporter('default'))
+);
+
+// Merge and minify files
+gulp.task('concat-styles', () => 
+  gulp
+    .src(['./assets/css/index.css', './assets/css/vendor/**/*.css'])
+    .pipe(plugins.sourcemaps.init())
+    .pipe(plugins.concat('styles.css'))
+    .pipe(plugins.minifyCss())
+    .pipe(
+      plugins.rename({
+        suffix: '.min'
+      })
+    )
+    .pipe(
+      plugins.autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+      })
+    )
+    .pipe(plugins.sourcemaps.write())
+    .pipe(gulp.dest('./assets/dist/'))
+);
+
+gulp.task('concat-js', () => 
+  gulp
+    .src(['./assets/js/index.js', './assets/js/vendor/**/*.js'])
+    .pipe(plugins.sourcemaps.init())
+    .pipe(plugins.concat('bundle.js'))
+    .pipe(plugins.uglify())
+    .pipe(
+      plugins.rename({
+        suffix: '.min'
+      })
+    )
+    .pipe(plugins.sourcemaps.write())
+    .pipe(gulp.dest('./assets/dist/'))
+);
+
+// Gulp tasks
+gulp.task('watch', ['browser-sync'], () => { // Watch task
+    // Watch sass files
+    gulp.watch('./assets/scss/**/*.scss', ['styles', reload]);
+
+    // Watch js files
+    gulp.watch('./assets/jss/**/*.jss', ['scripts', reload]);
+
+    // Watch njk files
+    gulp.watch(['./app/pages/**/*.+(html|njk)', './app/templates/**/*.+(html|njk)'], ['njk', reload]);
 });
+
+gulp.task('build', ['styles', 'merge']); // Compile sass, concat and minify css + js
+gulp.task('default', ['watch']); // Default gulp task
+gulp.task('lint', ['lint-styles', 'lint-scripts']); // Lint css + js files
+gulp.task('merge', ['concat-styles', 'concat-js']); // Merge & minify css + js
