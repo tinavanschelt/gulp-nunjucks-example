@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-  <!-- You write code for this content block in another file -->
+  <header class="page-header">Header</header>
+  <article class="content">Article</article>
+  <nav class="navigation">Navigation</nav>
+  <footer class="page-footer">Footer</footer>
   {% block content %} {% endblock %}
 
   <script src="js/main.js"></script>

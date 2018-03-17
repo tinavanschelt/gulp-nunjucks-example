@@ -5,18 +5,27 @@ body {
     display: grid;
     grid-template-areas: 
       "header"
-      "article"
-      "nav"
+      "content"
+      "navigation"
       "footer";
     grid-template-rows: 80px 1fr 1fr 70px;  
     grid-template-columns: 1fr;
+}
+
+header, footer, article, nav {
+  background-color: #CCC;
+  padding: 1.5em;
+}
+
+.content {
+  grid-area: content;
 }
 
 @media all and (min-width: 575px) {
   body { 
     grid-template-areas: 
       "header header"
-      "nav article"
+      "navigation content"
       "footer footer";
     grid-template-rows: 80px 1fr;  
     grid-template-columns: 20% 1fr;
