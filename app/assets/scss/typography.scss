@@ -1,0 +1,92 @@
+/* TYPOGRAPHY
+------------------------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6,
+p, figure, pre {
+  font-family: $font-sans;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0 0 1.5rem;
+
+  &.serif {
+    font-family: $font-serif;
+  }
+}
+
+p {
+  color: $color-charcoal;
+  font-size: $font-small;
+  font-weight: 400;
+  line-height: 1.8;
+
+  &.cropped-intro {
+    height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Links */
+a {
+  &.more-link {
+    font-size: $font-small;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $sans-bold;
+  line-height: 1;
+  margin: 1em 0;
+
+  &.normal {
+    font-weight: $sans;
+  }
+
+  &.spaced {
+    letter-spacing: 0.2em;
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.serif {
+    font-weight: $serif-bold;
+    font-style: italic;
+
+    &.normal {
+      font-weight: $serif;
+    }
+  }
+
+  &.margin-0 { margin: 0; };
+  &.margin-0-0-1 { margin: 0 0 1em; };
+  &.margin-1-0-0 { margin: 1em 0 0; };
+}
+
+h1 {
+  font-size: 55px;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 14px;
+}
