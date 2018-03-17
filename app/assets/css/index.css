@@ -66,7 +66,7 @@ body {
   grid-template-columns: 1fr; }
 
 header, footer, article, nav {
-  background-color: #CCC;
+  background-color: #EFEFEF;
   padding: 1.5em; }
 
 .content {
@@ -77,8 +77,8 @@ header, footer, article, nav {
     grid-template-areas: "header header" "navigation content" "footer footer";
     grid-template-rows: 80px 1fr;
     grid-template-columns: 20% 1fr;
-    grid-row-gap: 10px;
-    grid-column-gap: 10px;
+    grid-row-gap: 2%;
+    grid-column-gap: 1%;
     height: 100vh;
     margin: 0; } }
 
@@ -250,7 +250,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 1em 0 0; }
 
 h1 {
-  font-size: 10px !important; }
+  font-size: 55px; }
 
 h2 {
   font-size: 42px; }

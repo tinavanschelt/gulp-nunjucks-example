@@ -1,9 +1,12 @@
 {
-  "images": [{
-    "src": "image-one.png",
-    "alt": "Image one alt text"
+  "animals": [{
+    "type": "dog",
+    "sound": "woof"
   }, {
-    "src": "image-two.png",
-    "alt": "Image two alt text"
+    "type": "cat",
+    "sound": "meow"
+  }, {
+    "type": "cow",
+    "sound": "moo"
   }]
 }

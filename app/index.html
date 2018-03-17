@@ -5,40 +5,48 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="stylesheet" href="/assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
   <!-- header.njk -->
 <header class="page-header">
+  <h3 class="margin-0">Gulp Nunjucks Example</h3>
+</header>
+
   <!-- navigation.njk -->
 <nav class="navigation">
   <a href="#">Home</a>
   <a href="#">About</a>
 </nav>
-</header>
 
   <article class="content">
     
-
-<h1>This is the index page, is it? Awesome!</h1>
-
-
+<h3>This is the content area.</h3>
+<p>Featuring a loop example...</p>
 <div class="gallery">
-  <!-- Loops through "images" array -->
+  <!-- Loops example -->
   
-  <div class="gallery__item">
-    <img src="image-one.png" alt="Image one alt text">
-  </div>
+  <ul class="animals">
+    <li>dog goes woof</li>
+  </ul>
   
-  <div class="gallery__item">
-    <img src="image-two.png" alt="Image two alt text">
-  </div>
+  <ul class="animals">
+    <li>cat goes meow</li>
+  </ul>
+  
+  <ul class="animals">
+    <li>cow goes moo</li>
+  </ul>
   
 </div>
 
 
   </article>  
 
+  <!-- footer.njk -->
+<footer class="page-footer">
+  Footer goes here
+</footer>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

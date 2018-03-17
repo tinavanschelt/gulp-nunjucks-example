@@ -10,11 +10,14 @@
 <body>
   {% include "partials/header.njk" %}
 
+  {% include "partials/navigation.njk" %}
+
   <article class="content">
     {% block content %}
     {% endblock %}
   </article>  
 
+  {% include "partials/footer.njk" %}
   <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,18 +1,14 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-{# {% include partials "navigation" %}
-{% import 'macros/navigation-macro.njk' as nav %}
-{{nav.active('home')}} #}
-<h1>This is the index page, is it? Awesome!</h1>
-
-
+<h3>This is the content area.</h3>
+<p>Featuring a loop example...</p>
 <div class="gallery">
-  <!-- Loops through "images" array -->
-  {% for image in images %}
-  <div class="gallery__item">
-    <img src="{{image.src}}" alt="{{image.alt}}">
-  </div>
+  <!-- Loops example -->
+  {% for animal in animals %}
+  <ul class="animals">
+    <li>{{animal.type}} goes {{animal.sound}}</li>
+  </ul>
   {% endfor %}
 </div>
 

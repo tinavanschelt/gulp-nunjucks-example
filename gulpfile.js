@@ -39,7 +39,7 @@ gulp.task('njk', () =>
 // Compile Sass
 gulp.task('styles', () =>
   gulp
-    .src('./assets/scss/index.scss')
+    .src('./app/assets/scss/index.scss')
     .pipe(
       plugins.sass({
         onError: function(err) {
@@ -47,13 +47,13 @@ gulp.task('styles', () =>
         }
       })
     )
-    .pipe(gulp.dest('./assets/css/'))
+    .pipe(gulp.dest('./app/assets/css/'))
 );
 
 // Linters
 gulp.task('lint-styles', () => 
   gulp
-    .src(['./assets/sass/**/*.scss', '!assets/sass/vendor/**/*.scss'])
+    .src(['./app/assets/sass/**/*.scss', '!assets/sass/vendor/**/*.scss'])
     .pipe(plugins.sassLint())
     .pipe(plugins.sassLint.format())
     .pipe(plugins.sassLint.failOnError())
@@ -61,7 +61,7 @@ gulp.task('lint-styles', () =>
 
 gulp.task('lint-scripts', () =>
   gulp
-    .src(['./assets/js/**/*.js', '!assets/js/vendor/**/*.js'])
+    .src(['./app/assets/js/**/*.js', '!assets/js/vendor/**/*.js'])
     .pipe(plugins.jshint({ esversion: 6 }))
     .pipe(plugins.jshint.reporter('default'))
 );
@@ -69,7 +69,7 @@ gulp.task('lint-scripts', () =>
 // Merge and minify files
 gulp.task('concat-styles', () => 
   gulp
-    .src(['./assets/css/index.css', './assets/css/vendor/**/*.css'])
+    .src(['./app/assets/css/index.css', './app/assets/css/vendor/**/*.css'])
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.concat('styles.css'))
     .pipe(plugins.minifyCss())
@@ -85,12 +85,12 @@ gulp.task('concat-styles', () =>
       })
     )
     .pipe(plugins.sourcemaps.write())
-    .pipe(gulp.dest('./assets/dist/'))
+    .pipe(gulp.dest('./app/assets/dist/'))
 );
 
 gulp.task('concat-js', () => 
   gulp
-    .src(['./assets/js/index.js', './assets/js/vendor/**/*.js'])
+    .src(['./app/assets/js/index.js', './app/assets/js/vendor/**/*.js'])
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.concat('bundle.js'))
     .pipe(plugins.uglify())
@@ -100,16 +100,16 @@ gulp.task('concat-js', () =>
       })
     )
     .pipe(plugins.sourcemaps.write())
-    .pipe(gulp.dest('./assets/dist/'))
+    .pipe(gulp.dest('./app/assets/dist/'))
 );
 
 // Gulp tasks
 gulp.task('watch', ['browser-sync'], () => { // Watch task
     // Watch sass files
-    gulp.watch('./assets/scss/**/*.scss', ['styles', reload]);
+    gulp.watch('./app/assets/scss/**/*.scss', ['styles', reload]);
 
     // Watch js files
-    gulp.watch('./assets/jss/**/*.jss', ['scripts', reload]);
+    gulp.watch('./app/assets/jss/**/*.jss', ['scripts', reload]);
 
     // Watch njk files
     gulp.watch(['./app/pages/**/*.+(html|njk)', './app/templates/**/*.+(html|njk)'], ['njk', reload]);
