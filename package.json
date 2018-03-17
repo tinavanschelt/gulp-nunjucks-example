@@ -22,7 +22,7 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.3",
     "gulp-stylelint": "^6.0.0",
-    "gulp-uglify": "^3.0.0",
+    "gulp-uglify": "^3.0.0"
   },
   "dependencies": {
     "gulp-jshint": "^2.1.0",
