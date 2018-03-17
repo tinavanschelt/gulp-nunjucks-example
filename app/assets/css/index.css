@@ -61,6 +61,7 @@ table {
 ------------------------------------------------------------------------*/
 body {
   display: grid;
+  font-family: "Open Sans", sans-serif;
   grid-template-areas: "header" "content" "navigation" "footer";
   grid-template-rows: 80px 1fr 1fr 70px;
   grid-template-columns: 1fr; }

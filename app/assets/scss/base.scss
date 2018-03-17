@@ -3,6 +3,7 @@
 
 body {
     display: grid;
+    font-family: $font-sans;
     grid-template-areas: 
       "header"
       "content"
