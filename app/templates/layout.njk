@@ -8,11 +8,12 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  {% import 'partials/header.njk' as header %}
-  
+  {% include "partials/navigation.njk" %}
+
   <article class="content">
-    {% block content %} {% endblock %}
-  </article>
+    {% block content %}
+    {% endblock %}
+  </article>  
 
   <script src="js/main.js"></script>
 </body>

@@ -5,7 +5,7 @@ const gulp = require('gulp');
 var data = require('gulp-data');
 var nunjucksRender = require('gulp-nunjucks-render');
 
-gulp.task('nunjucks', function() {
+gulp.task('njk', function() {
     // Gets .html and .njk files in pages
     return gulp.src('app/pages/**/*.+(html|njk)')
     // Adding data to Nunjucks
