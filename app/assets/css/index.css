@@ -15,6 +15,8 @@
 /* CONTAINER-WIDTHS */
 /*  52.50 / 860px */
 /*  75.00 / 1024px */
+/* RESET
+------------------------------------------------------------------------*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -73,7 +75,7 @@ header, footer, article, nav {
 .content {
   grid-area: content; }
 
-@media all and (min-width: 575px) {
+@media all and (min-width: 46.25em) {
   body {
     grid-template-areas: "header header" "navigation content" "footer footer";
     grid-template-rows: 80px 1fr;
@@ -86,7 +88,8 @@ header, footer, article, nav {
 /* FOOTER
 ------------------------------------------------------------------------*/
 .page-footer {
-  grid-area: footer; }
+  grid-area: footer;
+  text-align: center; }
 
 /* GRID
 ------------------------------------------------------------------------*/
@@ -199,6 +202,15 @@ header, footer, article, nav {
 .page-header {
   grid-area: header; }
 
+/* NAVIGATION
+------------------------------------------------------------------------*/
+.navigation {
+  grid-area: navigation; }
+  .navigation .nav-item {
+    display: inline-block;
+    margin: 0.5em 0;
+    width: 100%; }
+
 /* TYPOGRAPHY
 ------------------------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6,
@@ -210,22 +222,6 @@ p, figure, pre {
   h1.serif, h2.serif, h3.serif, h4.serif, h5.serif, h6.serif,
   p.serif, figure.serif, pre.serif {
     font-family: "Cormorant Garamond", serif; }
-
-p {
-  color: #3C3C3C;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.8; }
-  p.cropped-intro {
-    height: 80px;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-
-/* Links */
-a.more-link {
-  font-size: 14px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase; }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -267,3 +263,20 @@ h5 {
 
 h6 {
   font-size: 14px; }
+
+/* Paragraphs */
+p {
+  color: #3C3C3C;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8; }
+  p.cropped-intro {
+    height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+
+/* Links */
+a.more-link {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase; }

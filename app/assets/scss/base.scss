@@ -14,7 +14,7 @@ body {
 }
 
 header, footer, article, nav {
-  background-color: #EFEFEF;
+  background-color: $color-gray-tint;
   padding: 1.5em;
 }
 
@@ -22,7 +22,7 @@ header, footer, article, nav {
   grid-area: content;
 }
 
-@media all and (min-width: 575px) {
+@media all and (min-width: $bp-small) {
   body { 
     grid-template-areas: 
       "header header"

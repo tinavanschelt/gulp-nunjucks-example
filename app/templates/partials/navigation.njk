@@ -1,5 +1,5 @@
 <!-- navigation.njk -->
 <nav class="navigation">
-  <a href="#">Home</a>
-  <a href="#">About</a>
+  {% import 'macros/navigation-macro.njk' as nav %}
+  {{nav.active('home')}}
 </nav>

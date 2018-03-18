@@ -13,28 +13,6 @@ p, figure, pre {
   }
 }
 
-p {
-  color: $color-charcoal;
-  font-size: $font-small;
-  font-weight: 400;
-  line-height: 1.8;
-
-  &.cropped-intro {
-    height: 80px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-
-/* Links */
-a {
-  &.more-link {
-    font-size: $font-small;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-}
-
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-weight: $sans-bold;
@@ -89,4 +67,27 @@ h5 {
 
 h6 {
   font-size: 14px;
+}
+
+/* Paragraphs */
+p {
+  color: $color-charcoal;
+  font-size: $font-small;
+  font-weight: 400;
+  line-height: 1.8;
+
+  &.cropped-intro {
+    height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Links */
+a {
+  &.more-link {
+    font-size: $font-small;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
 }
