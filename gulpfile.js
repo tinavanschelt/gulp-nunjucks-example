@@ -110,12 +110,11 @@ gulp.task("concat-js", () =>
 
 // Gulp tasks
 gulp.task("watch", ["browser-sync"], () => {
-  // Watch task
   // Watch sass files
   gulp.watch("./app/assets/scss/**/*.scss", ["styles", reload]);
 
   // Watch js files
-  gulp.watch("./app/assets/jss/**/*.jss", ["scripts", reload]);
+  gulp.watch("./app/assets/js/**/*.js", ["scripts", reload]);
 
   // Watch njk files
   gulp.watch(
