@@ -58,7 +58,7 @@ gulp.task("styles", () =>
 // Linters
 gulp.task("lint-styles", () =>
   gulp
-    .src(["./app/assets/sass/**/*.scss", "!assets/sass/vendor/**/*.scss"])
+    .src(["./app/assets/scss/**/*.scss", "!assets/scss/vendor/**/*.scss"])
     .pipe(plugins.sassLint())
     .pipe(plugins.sassLint.format())
     .pipe(plugins.sassLint.failOnError())
