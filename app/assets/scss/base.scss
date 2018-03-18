@@ -2,18 +2,23 @@
 ------------------------------------------------------------------------*/
 
 body {
-    display: grid;
-    font-family: $font-sans;
-    grid-template-areas: 
-      "header"
-      "content"
-      "navigation"
-      "footer";
-    grid-template-rows: 80px 1fr 1fr 70px;  
-    grid-template-columns: 1fr;
+  color: $color-charcoal;
+  display: grid;
+  font-size: $font-small;
+  font-family: $font-sans;
+  grid-template-areas:
+    "header"
+    "content"
+    "navigation"
+    "footer";
+  grid-template-rows: 80px 1fr 1fr 70px;
+  grid-template-columns: 1fr;
 }
 
-header, footer, article, nav {
+header,
+footer,
+article,
+nav {
   background-color: $color-gray-tint;
   padding: 1.5em;
 }
@@ -23,17 +28,16 @@ header, footer, article, nav {
 }
 
 @media all and (min-width: $bp-small) {
-  body { 
-    grid-template-areas: 
+  body {
+    grid-template-areas:
       "header header"
       "navigation content"
       "footer footer";
-    grid-template-rows: 80px 1fr;  
+    grid-template-rows: 80px 1fr;
     grid-template-columns: 20% 1fr;
     grid-row-gap: 2%;
     grid-column-gap: 1%;
     height: 100vh;
     margin: 0;
-    
- }
+  }
 }

@@ -1,8 +1,15 @@
 /* TYPOGRAPHY
 ------------------------------------------------------------------------*/
 
-h1, h2, h3, h4, h5, h6,
-p, figure, pre {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+pre {
   font-family: $font-sans;
   font-size: inherit;
   line-height: inherit;
@@ -14,7 +21,12 @@ p, figure, pre {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: $sans-bold;
   line-height: 1;
   margin: 1em 0;
@@ -40,9 +52,15 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  &.margin-0 { margin: 0; };
-  &.margin-0-0-1 { margin: 0 0 1em; };
-  &.margin-1-0-0 { margin: 1em 0 0; };
+  &.margin-0 {
+    margin: 0;
+  }
+  &.margin-0-0-1 {
+    margin: 0 0 1em;
+  }
+  &.margin-1-0-0 {
+    margin: 1em 0 0;
+  }
 }
 
 h1 {

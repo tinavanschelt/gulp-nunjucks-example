@@ -3,13 +3,10 @@
 {% block content %}
 <h3>This is the content area.</h3>
 <p>Featuring a loop example...</p>
-<div class="gallery">
-  <!-- Loops example -->
+<ul class="animals list-bullet">
   {% for animal in animals %}
-  <ul class="animals">
     <li>{{animal.type}} goes {{animal.sound}}</li>
-  </ul>
   {% endfor %}
-</div>
+</ul>
 
 {% endblock %}

@@ -2,27 +2,21 @@
 ------------------------------------------------------------------------*/
 
 /* BREAKPOINTS */
-$bp-xs:      30.00em; /*  30.00 / 480px */
-$bp-small:   46.25em; /*  46.25 / 700px */
-$bp-medium:  53.75em; /*  52.50 / 860px */
-$bp-large:   75.00em; /*  75.00 / 1024px */
+$bp-xs: 30em; /*  30.00 / 480px */
+$bp-small: 46.25em; /*  46.25 / 700px */
+$bp-medium: 53.75em; /*  52.50 / 860px */
+$bp-large: 75em; /*  75.00 / 1024px */
 
 /* COLORS */
-$color-charcoal: #3C3C3C;
-$color-gray: #CCCCCC;
-$color-gray-light: #ECECEC;
-$color-gray-tint: #EFEFEF; 
-$color-white: #FFFFFF;
-$color-green: #5CB85C;
-$color-sage: #89957D;
-$color-sage-bright: #91B57F;
-$color-sage-light: #b2d0a3;
-$color-brown: #928885;
-$color-yellow: #FFF3C4;
+$color-charcoal: #3c3c3c;
+$color-gray: #cccccc;
+$color-gray-light: #ececec;
+$color-gray-tint: #efefef;
+$color-white: #ffffff;
 
 /* FONTS */
-$font-sans:'Open Sans', sans-serif;
-$font-serif: 'Cormorant Garamond', serif;
+$font-sans: "Open Sans", sans-serif;
+$font-serif: "Cormorant Garamond", serif;
 
 /* FONT-SIZES */
 $font-tiny: 12px;
@@ -41,7 +35,7 @@ $serif: 400;
 $grid-gap: 3%;
 
 /* CONTAINER-WIDTHS */
-$c-xs:      96%;
-$c-small:   90%;
-$c-medium:  53.75em; /*  52.50 / 860px */
-$c-large:   1180px; /*  75.00 / 1024px */
+$c-xs: 96%;
+$c-small: 90%;
+$c-medium: 53.75em; /*  52.50 / 860px */
+$c-large: 1180px; /*  75.00 / 1024px */
