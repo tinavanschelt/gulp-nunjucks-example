@@ -13,6 +13,10 @@ body {
     "footer";
   grid-template-rows: 80px 1fr 1fr 70px;
   grid-template-columns: 1fr;
+  grid-row-gap: 2%;
+  grid-column-gap: 1%;
+  height: 100vh;
+  margin: 0;
 }
 
 header,
@@ -35,9 +39,5 @@ nav {
       "footer footer";
     grid-template-rows: 80px 1fr;
     grid-template-columns: 20% 1fr;
-    grid-row-gap: 2%;
-    grid-column-gap: 1%;
-    height: 100vh;
-    margin: 0;
   }
 }
