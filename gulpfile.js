@@ -55,6 +55,14 @@ gulp.task("styles", () =>
     .pipe(gulp.dest("./app/assets/css/"))
 );
 
+// Compile JS
+gulp.task("scripts", () =>
+  gulp
+    .src("./app/assets/js/**/*.js")
+    .pipe(plugins.concat("index.js"))
+    .pipe(gulp.dest("./app/assets/js/"))
+);
+
 // Linters
 gulp.task("lint-styles", () =>
   gulp
